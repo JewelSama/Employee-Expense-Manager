@@ -110,8 +110,11 @@
             </div>
 
             <div>
-            <div class=" hidden xl:block w-80"  style="background-color: #f3f5f7; height: 100%">
-                ahsuav ui bi bujv
+            <div class=" hidden xl:block w-80 px-6 py-4 shadow-inner"  style="background-color: #f3f5f7; height: 100%">
+            <div class="flex flex-row border-b py-2 border-gray-300 justify-between">
+                    <span class="text-sm text-gray-600">To be reimbursed</span>
+                </div>
+                <span class="text-3xl justify-center self-center flex mt-11">₦12,439</span>
             </div>
             </div>
 
