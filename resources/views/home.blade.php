@@ -26,8 +26,8 @@
 
         <div  class="flex flex-row md:justify-between  justify-center" style="height: 90%;">
 
-            <div class=" hidden shadow-inner lg:block px-4 py-3  w-80"  style="background-color: #f3f5f7;">
-                <div class="flex flex-row border-b py-2 border-gray-300 justify-between">
+            <div class="hidden shadow-inner lg:block px-4 py-2  w-80"  style="background-color: #f3f5f7;">
+                <div class="flex flex-row border-b py-2  border-gray-300 justify-between">
                     <span class="text-sm text-gray-600">Filter Expenses</span>
                     <span class="text-sm text-blue-600 cursor-pointer">Clear Filters</span>
                 </div>
@@ -111,200 +111,46 @@
 <table id="example" class="table overflow-auto" style="width:100%;">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th class="font-normal text-gray-700 text-sm">Date</th>
+                <th class="font-normal text-gray-700 text-sm">Merchant</th>
+                <th class="font-normal text-gray-700 text-sm">Total</th>
+                <th class="font-normal text-gray-700 text-sm">Status</th>
+                <th class="font-normal text-gray-700 text-sm">Comment</th>
             </tr>
         </thead>
         <tbody>
         <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
+            <td class="text-gray-700">2011-04-25</td>
+            <td class="text-gray-700">Office supplies</td>
+            <td class="text-gray-700">₦320,800</td>
+            <td class="text-red-500">New</td>
+            <td class="text-gray-700">Expense from my business trip</td>
+        </tr>
         <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
+            <td class="text-gray-700">2011-03-20</td>
+            <td class="text-gray-700">Hotel</td>
+            <td class="text-gray-700">₦320,850</td>
+            <td class="text-gray-500 italic">In Progress</td>
+            <td class="text-gray-700">Expense from my business trip</td>
+        </tr>
         <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-        <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
-            <tr>
-                <td>Garrett Winters</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>2011-07-25</td>
-                <td>$170,750</td>
-            </tr>
-            <tr>
-                <td>Ashton Cox</td>
-                <td>Junior Technical Author</td>
-                <td>San Francisco</td>
-                <td>66</td>
-                <td>2009-01-12</td>
-                <td>$86,000</td>
-            </tr>
-</body>
+            <td class="text-gray-700">2011-02-20</td>
+            <td class="text-gray-700">Hotel</td>
+            <td class="text-gray-700">₦320,850</td>
+            <td class="text-gray-500 italic">Reimbursed</td>
+            <td class="text-gray-700">Expense from my business trip</td>
+        </tr>
+       
+        
+            
+</tbody>
 <tfoot class="hidden">
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>Date</th>
+                <th>Merchant</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Comment</th>
             </tr>
         </tfoot>
 
@@ -320,7 +166,7 @@
             </div>
 
             <div>
-            <div class=" hidden xl:block w-72 px-4 py-3 shadow-inner"  style="background-color: #f3f5f7; height: 100%">
+            <div class=" hidden xl:block w-80 px-4 py-3 shadow-inner"  style="background-color: #f3f5f7; height: 100%">
             <div class="flex flex-row border-b py-2 border-gray-300 justify-between">
                     <span class="text-sm text-gray-600">To be reimbursed</span>
                 </div>
