@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">   
         <script src="https://unpkg.com/flowbite@1.5.3/dist/datepicker.js"></script>
+        <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
@@ -174,7 +175,7 @@
 
 </div>
 
-        <button  type="button" onclick="toggleModal('modal-id')" class=" absolute bg-[#ff4238] hover:bg-[#ccc] bottom-8 right-3 flex p-2 h-14 w-14 items-center justify-center rounded-full" >
+        <button  type="button" onclick="toggleModal('modal-id')" class=" absolute bg-[#ff4238] hover:bg-[#ccc] bottom-56 right-2 md:bottom-8 md:right-3 flex p-2 h-14 w-14 items-center justify-center rounded-full" >
         <i class="fa fa-plus text-white" aria-hidden="true"></i>
 
         </button>
@@ -188,12 +189,13 @@
 
 
 <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
-  <div class="relative w-1/2 my-6 mx-auto">
+  <div class="relative w-80 py-2 px-5  md:w-auto md:h-auto my-6 mx-auto">
     <!--content-->
     <div class="border-0 rounded-md shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
       <!--header-->
-      <div class="flex flex-row justify-between p-4">
-        <div class="w-56">
+      <div class="flex md:flex-row flex-col md:space-x-8 justify-between items-center  md:p-4">
+        <div class="md:w-80 w-1/2">
+            <h2 class="font-bold text-2xl md:mt-4 md:mb-3">Add Expense</h2>
         <div>
             <label for="countries" class="text-sm text-gray-500">Merchant*</label>
                     <select id="countries" class="bg-gray-300 border mb-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 ">
@@ -217,7 +219,7 @@
                     <div>
                         <span class="text-sm text-gray-500">Total*</span>
                         <div class="relative mb-3">
-                        <input name="end" type="number" class="bg-gray-300 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-56 pl-10 p-2  datepicker-input">
+                        <input name="end" type="number" class="bg-gray-300 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  datepicker-input">
                         </div>
                         </div>
 
@@ -233,8 +235,8 @@
 
                         <div>
                         <span class="text-sm text-gray-500">Comment</span>
-                        <div class="relative mb-3">
-                        <input name="end" type="text" class="bg-gray-300 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-56 h-28 pl-10 p-2  datepicker-input">
+                        <div class="relative mb-5">
+                        <textarea name="end" type="text" class="bg-gray-300 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full h-28 pl-10 p-2"></textarea>
                         </div>
                         </div>
 
@@ -242,8 +244,16 @@
 
 
         </div>
-        <div>
-            drop recipt
+        <div class="flex justify-center h-96 items-center w-1/2 md:w-80">    
+        <label for="dropzone-file" class="flex flex-col justify-center items-center w-full h-full bg-white rounded-lg border-2 border-gray-100 border-dashed cursor-pointer dark:hover:bg-gray-200 dark:bg-white hover:bg-gray-100 dark:border-gray-300 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+            <!-- <div class="flex flex-col justify-center items-center pt-5 pb-6">
+                <svg aria-hidden="true" class="mb-3 w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+            </div>
+            <input id="dropzone-file" type="file" class="hidden" /> -->
+            <input class="form-control" id="formFileSm" name="Browse files" type="file">
+        </label>
         </div>
       </div>
         <!-- <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
