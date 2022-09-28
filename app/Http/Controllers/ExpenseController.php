@@ -14,8 +14,7 @@ class ExpenseController extends Controller
             'total' => 'required',
             'comment' => 'required',
         ]);
-        // return $request;
-            Expense::create($expenseFields);
+        Expense::create($expenseFields);
         return redirect('/')->with('status', 'Expense added Successfully!');        
     }   
 }

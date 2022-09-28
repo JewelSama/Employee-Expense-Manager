@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ExpenseController;
+use App\Models\Expense;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $expense = Expense::latest()->get();
+    return view('home', compact('expense'));
 });
 Route::post('/expense', [ExpenseController::class, 'store'])->name('expense');
