@@ -17,7 +17,7 @@ class CreateExpensesTable extends Migration
             $table->id();
             $table->string('date');
             $table->string('merchant');
-            $table->string('total');
+            $table->number('total');
             $table->string('status')->default('Reimbursed');
             $table->longText('comment');
             $table->timestamps();
