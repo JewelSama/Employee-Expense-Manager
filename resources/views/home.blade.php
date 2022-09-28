@@ -119,41 +119,35 @@
             </tr>
         </thead>
         <tbody>
-        <tr>
+        <tr onclick="toggleModal('modal-id')" class="hover:bg-gray-200 cursor-pointer">
             <td class="text-gray-700">2011-04-25</td>
             <td class="text-gray-700">Office supplies</td>
             <td class="text-gray-700">₦320,800</td>
             <td class="text-red-500">New</td>
             <td class="text-gray-700">Expense from my business trip</td>
         </tr>
-        <tr>
+        <tr onclick="toggleModal('modal-id')" class="hover:bg-gray-200 cursor-pointer">
             <td class="text-gray-700">2011-03-20</td>
             <td class="text-gray-700">Hotel</td>
             <td class="text-gray-700">₦320,850</td>
             <td class="text-gray-500 italic">In Progress</td>
             <td class="text-gray-700">Expense from my business trip</td>
         </tr>
-        <tr>
+        <tr onclick="toggleModal('modal-id')" class="hover:bg-gray-200 cursor-pointer">
             <td class="text-gray-700">2011-02-20</td>
             <td class="text-gray-700">Hotel</td>
             <td class="text-gray-700">₦320,850</td>
             <td class="text-gray-500 ">Reimbursed</td>
             <td class="text-gray-700">Expense from my business trip</td>
         </tr>
-        <tr>
+        <!-- <tr onclick="toggleModal('modal-id')" class="hover:bg-2ray-300 cursor-pointer ">
             <td class="text-gray-700">2011-02-20</td>
             <td class="text-gray-700">Hotel</td>
             <td class="text-gray-700">₦320,850</td>
             <td class="text-gray-500 ">Reimbursed</td>
             <td class="text-gray-700">Expense from my business trip</td>
-        </tr>
-        <tr>
-            <td class="text-gray-700">2011-02-20</td>
-            <td class="text-gray-700">Hotel</td>
-            <td class="text-gray-700">₦320,850</td>
-            <td class="text-gray-500 ">Reimbursed</td>
-            <td class="text-gray-700">Expense from my business trip</td>
-        </tr>
+        </tr> -->
+        
        
         
             
@@ -189,7 +183,7 @@
 
 
 <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
-  <div class="relative w-80 py-2 px-5  md:w-auto md:h-auto my-6 mx-auto">
+  <div class="relative w-80 py-2 px-7  md:w-auto md:h-auto my-6 mx-auto">
     <!--content-->
     <div class="border-0 rounded-md shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
       <!--header-->
@@ -198,7 +192,7 @@
             <h2 class="font-bold text-2xl md:mt-4 md:mb-3">Add Expense</h2>
         <div>
             <label for="countries" class="text-sm text-gray-500">Merchant*</label>
-                    <select id="countries" class="bg-gray-300 border mb-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 ">
+                    <select id="countries" class="bg-gray-200 border mb-2 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 ">
                       <option value="" selected></option>
                       <option value="US">Office Supplies</option>
                       <option value="CA">Electronics</option>
@@ -219,7 +213,7 @@
                     <div>
                         <span class="text-sm text-gray-500">Total*</span>
                         <div class="relative mb-3">
-                        <input name="end" type="number" class="bg-gray-300 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  datepicker-input">
+                        <input name="end" type="number" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  datepicker-input">
                         </div>
                         </div>
 
@@ -229,22 +223,29 @@
                         <div class="flex absolute inset-y-0 right-2 items-center pl-3 pointer-events-none">
                             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
                         </div>
-                        <input name="start" type="text" class="bg-gray-300 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  datepicker-input" >
+                        <input name="start" type="text" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  datepicker-input" >
                       </div>
                         </div>
 
-                        <div>
+                        <div class="mb-2">
                         <span class="text-sm text-gray-500">Comment</span>
-                        <div class="relative mb-5">
-                        <textarea name="end" type="text" class="bg-gray-300 border border-gray-300 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full h-28 pl-10 p-2"></textarea>
+                        <div class="relative mb-3">
+                        <textarea name="end" type="text" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full h-28 pl-10 p-2"></textarea>
                         </div>
                         </div>
-
+                        <div class="flex items-center space-x-3 mb-2">
+                        <button class="bg-blue-500 text-white active:bg-blue-600 hover:bg-blue-600 font-semibold px-4  text-md py-2 rounded-sm  ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
+                          Save
+                        </button>
+                        <button class="text-blue-500 bg-gray-200  px-2 py-2 text-md hover:bg-blue-500 hover:text-gray-200  rounded-sm   ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
+                            Cancel
+                        </button>
+                        </div>
 
 
 
         </div>
-        <div class="flex justify-center h-96 items-center w-1/2 md:w-80">    
+        <div class="flex justify-center md:h-96 items-center w-1/2 md:w-80">    
         <label for="dropzone-file" class="flex flex-col justify-center items-center w-full h-full bg-white rounded-lg border-2 border-gray-100 border-dashed cursor-pointer dark:hover:bg-gray-200 dark:bg-white hover:bg-gray-100 dark:border-gray-300 dark:hover:border-gray-500 dark:hover:bg-gray-600">
             <!-- <div class="flex flex-col justify-center items-center pt-5 pb-6">
                 <svg aria-hidden="true" class="mb-3 w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
@@ -256,12 +257,7 @@
         </label>
         </div>
       </div>
-        <!-- <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
-          Close
-        </button>
-        <button class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
-          Save Changes
-        </button> -->
+       
       
     </div>
   </div>
