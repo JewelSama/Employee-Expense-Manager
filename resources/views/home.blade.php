@@ -127,59 +127,19 @@
             </tr>
         </thead>
         <tbody>
-        <tr onclick="toggleModal('modalEdit-id')" class="hover:bg-gray-200 cursor-pointer">
-            <td class="text-gray-700">2011-04-25</td>
-            <td class="text-gray-700">Office supplies</td>
-            <td class="text-gray-700">₦320,800</td>
-            <td class="text-red-500">New</td>
-            <td class="text-gray-700">Expense from my business trip</td>
-        </tr>
-        <tr onclick="toggleEditModal('modalEdit-id')" class="hover:bg-gray-200 cursor-pointer">
-            <td class="text-gray-700">2011-03-20</td>
-            <td class="text-gray-700">Hotel</td>
-            <td class="text-gray-700">₦320,850</td>
-            <td class="text-gray-500 italic">In Progress</td>
-            <td class="text-gray-700">Expense from my business trip</td>
-        </tr>
-        <tr onclick="toggleEditModal('modalEdit-id')" class="hover:bg-gray-200 cursor-pointer">
-            <td class="text-gray-700">2011-02-20</td>
-            <td class="text-gray-700">Hotel</td>
-            <td class="text-gray-700">₦320,850</td>
-            <td class="text-gray-500 ">Reimbursed</td>
-            <td class="text-gray-700">Expense from my business trip</td>
-        </tr>
-        <!-- <tr onclick="toggleModal('modalEdit-id')" class="hover:bg-2ray-300 cursor-pointer ">
-            <td class="text-gray-700">2011-02-20</td>
-            <td class="text-gray-700">Hotel</td>
-            <td class="text-gray-700">₦320,850</td>
-            <td class="text-gray-500 ">Reimbursed</td>
-            <td class="text-gray-700">Expense from my business trip</td>
-        </tr> -->
-        
+            @if ($expense->count())
+                @foreach($expense as $item)
+                    <tr onclick="toggleModal('modalEdit-id-{{$item->id}}')" class="hover:bg-gray-200 cursor-pointer">
+                        <td class="text-gray-700">{{$item->date}}</td>
+                        <td class="text-gray-700">{{$item->merchant}}</td>
+                        <td class="text-gray-700">₦{{$item->total}}</td>
+                        <td class="{{$item->status == 'Reimbursed' ? 'text-gray-700' : ($item->status == 'In Progress' ? 'text-gray-500 italic' : 'text-red-500' )}}">{{$item->status}}</td>
+                        <td class="text-gray-700">{{$item->comment}}</td>
+                    </tr>
+
+                    <!-- Edit modal  -->
        
-        
-            
-</tbody>
-<tfoot class="hidden">
-            <tr>
-                <th>Date</th>
-                <th>Merchant</th>
-                <th>Total</th>
-                <th>Status</th>
-                <th>Comment</th>
-            </tr>
-        </tfoot>
-
-</table>
-
-
-
-
-</div>
-
-
-<!-- Edit modal  -->
-<div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modalEdit-id">
+<div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modalEdit-id-{{$item->id}}">
   <div class="relative w-80 py-2 px-7  md:w-auto md:h-auto my-6 mx-auto">
     <!--content-->
     <div class="border-0 rounded-md shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -190,7 +150,7 @@
         <div>
             <label for="countries" class="text-sm text-gray-500">Merchant*</label>
                     <select id="countries" class="bg-gray-200 border mb-2 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 ">
-                      <option value="" selected></option>
+                      <option value="{{$item->merchant}}" selected>{{$item->merchant}}</option>
                       <option value="US">Office Supplies</option>
                       <option value="CA">Electronics</option>
                       <option value="FR">Hotel</option>
@@ -210,7 +170,7 @@
                     <div>
                         <span class="text-sm text-gray-500">Total*</span>
                         <div class="relative mb-3">
-                        <input name="end" type="number" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  datepicker-input">
+                        <input name="end" type="number" value="{{$item->total}}" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  datepicker-input">
                         </div>
                         </div>
 
@@ -220,21 +180,21 @@
                         <div class="flex absolute inset-y-0 right-2 items-center pl-3 pointer-events-none">
                             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
                         </div>
-                        <input name="start" type="text" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  datepicker-input" >
+                        <input name="start" value="{{$item->date}}" type="text" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  datepicker-input" >
                       </div>
                         </div>
 
                         <div class="mb-2">
                         <span class="text-sm text-gray-500">Comment</span>
                         <div class="relative mb-3">
-                        <textarea name="end" type="text" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full h-28 pl-10 p-2"></textarea>
+                        <textarea name="end" type="text" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full h-28 pl-10 p-2">{{$item->comment}}</textarea>
                         </div>
                         </div>
                         <div class="flex items-center space-x-3 mb-2">
                         <button class="bg-blue-500 text-white active:bg-blue-600 hover:bg-blue-600 font-semibold px-4  text-md py-2 rounded-sm  ease-linear transition-all duration-150" type="button" onclick="toggleEditModal('modalEdit-id')">
                           Save
                         </button>
-                        <button class="text-blue-500 bg-gray-200  px-2 py-2 text-md hover:bg-blue-500 hover:text-gray-200  rounded-sm   ease-linear transition-all duration-150" type="button" onclick="toggleEditModal('modalEdit-id')">
+                        <button class="text-blue-500 bg-gray-200  px-2 py-2 text-md hover:bg-blue-500 hover:text-gray-200  rounded-sm   ease-linear transition-all duration-150" type="button" onclick="toggleEditModal('modalEdit-id-{{$item->id}}')">
                             Cancel
                         </button>
                         </div>
@@ -259,7 +219,35 @@
     </div>
   </div>
 </div>
-<div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modalEdit-id-backdrop"></div>
+<div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modalEdit-id-{{$item->id}}-backdrop"></div>
+
+
+
+                @endforeach
+            @else
+            <td class="text-red-500">No expense yet.. Add by clicking the button below</td>
+            @endif        
+            
+</tbody>
+<tfoot class="hidden">
+            <tr>
+                <th>Date</th>
+                <th>Merchant</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Comment</th>
+            </tr>
+        </tfoot>
+
+</table>
+
+
+
+
+</div>
+
+
+
 
 
 
@@ -284,19 +272,19 @@
         <div>
             <label for="countries" class="text-sm text-gray-500">Merchant*</label>
                     <select id="countries" name="merchant" class="bg-gray-200 border mb-2 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 ">
-                      <option value="US">Office Supplies</option>
-                      <option value="CA">Electronics</option>
-                      <option value="FR">Hotel</option>
-                      <option value="DE">Live Sharing</option>
-                      <option value="DE">Fast Food</option>
-                      <option value="DE">Rental Car</option>
-                      <option value="DE">Breakfast</option>
-                      <option value="DE">Airline</option>
-                      <option value="DE">Parking</option>
-                      <option value="DE">Anime</option>
-                      <option value="DE">Shuttle</option>
-                      <option value="DE">Restaurant</option>
-                      <option value="DE">Taxi</option>
+                      <option value="Office Supplies">Office Supplies</option>
+                      <option value="Electronics">Electronics</option>
+                      <option value="Hotel">Hotel</option>
+                      <option value="Live Sharing">Live Sharing</option>
+                      <option value="Fast Food">Fast Food</option>
+                      <option value="Rental Car">Rental Car</option>
+                      <option value="Breakfast">Breakfast</option>
+                      <option value="Airline">Airline</option>
+                      <option value="Parking">Parking</option>
+                      <option value="Anime">Anime</option>
+                      <option value="Shuttle">Shuttle</option>
+                      <option value="Restaurant">Restaurant</option>
+                      <option value="Taxi">Taxi</option>
                     </select>
         </div>
 
@@ -369,7 +357,7 @@
             <div class="flex flex-row border-b py-2 border-gray-300 justify-between">
                     <span class="text-sm text-gray-600">To be reimbursed</span>
                 </div>
-                <span class="text-3xl justify-center self-center flex mt-11">₦12,439</span>
+                <span class="text-4xl justify-center font-semibold self-center flex mt-11">₦{{number_format($totalN)}}</span>
                 
             </div>
             </div>

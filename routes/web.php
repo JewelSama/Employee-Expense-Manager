@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $expense = Expense::latest()->get();
-    return view('home', compact('expense'));
+    $totalN = 0;
+    foreach($expense as $item){
+        $totalN += $item->total;
+    }
+    return view('home', compact('expense', 'totalN'));
 });
 Route::post('/expense', [ExpenseController::class, 'store'])->name('expense');
