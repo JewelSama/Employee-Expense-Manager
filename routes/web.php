@@ -24,3 +24,5 @@ Route::get('/', function () {
     return view('home', compact('expense', 'totalN'));
 });
 Route::post('/expense', [ExpenseController::class, 'store'])->name('expense');
+Route::put('/expense/edit/{expense}', [ExpenseController::class, 'update']);
+Route::delete('/expense/delete/{expense}', [ExpenseController::class, 'destroy']);
