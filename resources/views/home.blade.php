@@ -149,23 +149,24 @@
             <h2 class="font-bold text-2xl md:mt-4 md:mb-3">Edit Expense</h2>
             <form action="/expense/edit/{{$item->id}}" method="post">
                 @method('PUT')
+                @csrf
         <div>
             <label for="countries" class="text-sm text-gray-500">Merchant*</label>
                     <select id="countries" name="merchant" class="bg-gray-200 border mb-2 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 ">
                       <option value="{{$item->merchant}}" selected>{{$item->merchant}}</option>
-                      <option value="US">Office Supplies</option>
-                      <option value="CA">Electronics</option>
-                      <option value="FR">Hotel</option>
-                      <option value="DE">Live Sharing</option>
-                      <option value="DE">Fast Food</option>
-                      <option value="DE">Rental Car</option>
-                      <option value="DE">Breakfast</option>
-                      <option value="DE">Airline</option>
-                      <option value="DE">Parking</option>
-                      <option value="DE">Anime</option>
-                      <option value="DE">Shuttle</option>
-                      <option value="DE">Restaurant</option>
-                      <option value="DE">Taxi</option>
+                      <option value="Office Supplies">Office Supplies</option>
+                      <option value="Electronics">Electronics</option>
+                      <option value="Hotel">Hotel</option>
+                      <option value="Live Sharing">Live Sharing</option>
+                      <option value="Fast Food">Fast Food</option>
+                      <option value="Rental Car">Rental Car</option>
+                      <option value="Breakfast">Breakfast</option>
+                      <option value="Airline">Airline</option>
+                      <option value="Parking">Parking</option>
+                      <option value="Anime">Anime</option>
+                      <option value="Shuttle">Shuttle</option>
+                      <option value="Restaurant">Restaurant</option>
+                      <option value="Taxi">Taxi</option>
                     </select>
         </div>
 
@@ -205,7 +206,8 @@
 
 
         </div>
-        <div class="flex justify-center md:h-96 items-center w-1/2 md:w-80">    
+        <div>
+        <div class="flex flex-col justify-center md:h-96 items-center w-1/2 md:w-80">    
         <label for="dropzone-file" class="flex flex-col justify-center items-center w-full h-full bg-white rounded-lg border-2 border-gray-100 border-dashed cursor-pointer dark:hover:bg-gray-200 dark:bg-white hover:bg-gray-100 dark:border-gray-300 dark:hover:border-gray-500 dark:hover:bg-gray-600">
             <!-- <div class="flex flex-col justify-center items-center pt-5 pb-6">
                 <svg aria-hidden="true" class="mb-3 w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
@@ -215,7 +217,14 @@
             <input id="dropzone-file" type="file" class="hidden" /> -->
             <!-- <input class="form-control" id="formFileSm" name="Browse files" type="file"> -->
         </label>
-        </div>
+    </div>
+    <div class="absolute bottom-6 right-7">
+        <form action="/expense/delete/{{$item->id}}" method="POST">
+            @method('DELETE')
+            <button class="bg-transparent p-1 rounded-sm font-semibold text-red-600 hover:text-red-400" type="submit">Delete</button>
+        </form>
+    </div>
+      </div>
       </div>
        
       
