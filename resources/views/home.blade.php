@@ -221,6 +221,7 @@
     <div class="absolute bottom-6 right-7">
         <form action="/expense/delete/{{$item->id}}" method="POST">
             @method('DELETE')
+            @csrf
             <button class="bg-transparent p-1 rounded-sm font-semibold text-red-600 hover:text-red-400" type="submit">Delete</button>
         </form>
     </div>
