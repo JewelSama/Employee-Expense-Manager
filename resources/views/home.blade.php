@@ -147,9 +147,11 @@
       <div class="flex md:flex-row flex-col md:space-x-8 justify-between items-center  md:p-4">
         <div class="md:w-80 w-1/2">
             <h2 class="font-bold text-2xl md:mt-4 md:mb-3">Edit Expense</h2>
+            <form action="/expense/edit/{{$item->id}}" method="post">
+                @method('PUT')
         <div>
             <label for="countries" class="text-sm text-gray-500">Merchant*</label>
-                    <select id="countries" class="bg-gray-200 border mb-2 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 ">
+                    <select id="countries" name="merchant" class="bg-gray-200 border mb-2 border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 ">
                       <option value="{{$item->merchant}}" selected>{{$item->merchant}}</option>
                       <option value="US">Office Supplies</option>
                       <option value="CA">Electronics</option>
@@ -170,7 +172,7 @@
                     <div>
                         <span class="text-sm text-gray-500">Total*</span>
                         <div class="relative mb-3">
-                        <input name="end" type="number" value="{{$item->total}}" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  datepicker-input">
+                        <input name="total" type="number" value="{{$item->total}}" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  datepicker-input">
                         </div>
                         </div>
 
@@ -180,24 +182,25 @@
                         <div class="flex absolute inset-y-0 right-2 items-center pl-3 pointer-events-none">
                             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
                         </div>
-                        <input name="start" value="{{$item->date}}" type="text" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  datepicker-input" >
+                        <input name="date" value="{{$item->date}}" type="text" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  datepicker-input" >
                       </div>
                         </div>
 
                         <div class="mb-2">
                         <span class="text-sm text-gray-500">Comment</span>
                         <div class="relative mb-3">
-                        <textarea name="end" type="text" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full h-28 pl-10 p-2">{{$item->comment}}</textarea>
+                        <textarea name="comment" type="text" class="bg-gray-200 border border-gray-200 text-gray-900 sm:text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full h-28 pl-10 p-2">{{$item->comment}}</textarea>
                         </div>
                         </div>
                         <div class="flex items-center space-x-3 mb-2">
-                        <button class="bg-blue-500 text-white active:bg-blue-600 hover:bg-blue-600 font-semibold px-4  text-md py-2 rounded-sm  ease-linear transition-all duration-150" type="button" onclick="toggleEditModal('modalEdit-id')">
-                          Save
+                        <button class="bg-blue-500 text-white active:bg-blue-600 hover:bg-blue-600 font-semibold px-4  text-md py-2 rounded-sm  ease-linear transition-all duration-150" type="submit">
+                          Update
                         </button>
                         <button class="text-blue-500 bg-gray-200  px-2 py-2 text-md hover:bg-blue-500 hover:text-gray-200  rounded-sm   ease-linear transition-all duration-150" type="button" onclick="toggleEditModal('modalEdit-id-{{$item->id}}')">
                             Cancel
                         </button>
                         </div>
+                    </form>
 
 
 
@@ -210,7 +213,7 @@
                 <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
             </div>
             <input id="dropzone-file" type="file" class="hidden" /> -->
-            <input class="form-control" id="formFileSm" name="Browse files" type="file">
+            <!-- <input class="form-control" id="formFileSm" name="Browse files" type="file"> -->
         </label>
         </div>
       </div>
