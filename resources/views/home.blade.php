@@ -264,7 +264,7 @@
 
 
 
-        <button  type="button" onclick="toggleModal('modal-id')" class=" absolute bg-[#ff4238] hover:bg-[#ccc] bottom-56 right-2 md:bottom-8 md:right-3 flex p-2 h-14 w-14 items-center justify-center rounded-full" >
+        <button  type="button" onclick="toggleModal('modal-id')" class=" shadow-md shadow-gray-600 absolute bg-[#ff4238] hover:bg-[#ccc] bottom-56 right-2 md:bottom-8 md:right-3 flex p-2 h-14 w-14 items-center justify-center rounded-full" >
         <i class="fa fa-plus text-white" aria-hidden="true"></i>
 
         </button>
@@ -335,6 +335,7 @@
                 </form>
 
         </div>
+        <div>
         <div class="flex justify-center md:h-96 items-center w-1/2 md:w-80">    
         <label for="dropzone-file" class="flex flex-col justify-center items-center w-full h-full bg-white rounded-lg border-2 border-gray-100 border-dashed cursor-pointer dark:hover:bg-gray-200 dark:bg-white hover:bg-gray-100 dark:border-gray-300 dark:hover:border-gray-500 dark:hover:bg-gray-600">
             <!-- <div class="flex flex-col justify-center items-center pt-5 pb-6">
@@ -343,9 +344,17 @@
                 <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
             </div>
             <input id="dropzone-file" type="file" class="hidden" /> -->
-            <input class="form-control" id="formFileSm" name="Browse files" type="file">
+            <!-- <input class="form-control" id="formFileSm" name="Browse files" type="file"> -->
         </label>
         </div>
+        <div class="absolute bottom-6 right-7">
+        <form action="/expense/" method="POST">
+            @method('DELETE')
+            @csrf
+            <button class="bg-transparent p-1 rounded-sm font-semibold text-blue-600 hover:text-blue-400" type="submit">Import From excel file</button>
+        </form>
+    </div>
+      </div>
       </div>
        
       
