@@ -23,6 +23,7 @@ Route::get('/', function () {
     }
     return view('home', compact('expense', 'totalN'));
 });
-Route::post('/expense', [ExpenseController::class, 'store'])->name('expense');
+Route::post('/expense', [ExpenseController::class, 'store'])->name('expense');   
+Route::post('/import_7wer37y8y_expense_hadywt37tq7676', [ExpenseController::class, 'importExpense'])->name('import-expense');   
 Route::put('/expense/edit/{expense}', [ExpenseController::class, 'update']);
 Route::delete('/expense/delete/{expense}', [ExpenseController::class, 'destroy']);
