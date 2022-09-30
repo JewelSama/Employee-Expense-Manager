@@ -336,24 +336,22 @@
 
         </div>
         <div>
+            <form action="{{route('import-expense')}}" method="POST" enctype="multipart/form-data">
+                @csrf
         <div class="flex justify-center md:h-96 items-center w-1/2 md:w-80">    
         <label for="dropzone-file" class="flex flex-col justify-center items-center w-full h-full bg-white rounded-lg border-2 border-gray-100 border-dashed cursor-pointer dark:hover:bg-gray-200 dark:bg-white hover:bg-gray-100 dark:border-gray-300 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-            <!-- <div class="flex flex-col justify-center items-center pt-5 pb-6">
+            <div class="flex flex-col justify-center items-center pt-5 pb-6">
                 <svg aria-hidden="true" class="mb-3 w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop excel file</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">CSV or XLSX(MAX. 800x400px)</p>
             </div>
-            <input id="dropzone-file" type="file" class="hidden" /> -->
-            <!-- <input class="form-control" id="formFileSm" name="Browse files" type="file"> -->
+            <input id="dropzone-file" type="file" name="file" />
         </label>
         </div>
         <div class="absolute bottom-6 right-7">
-        <form action="/expense/" method="POST">
-            @method('DELETE')
-            @csrf
-            <button class="bg-transparent p-1 rounded-sm font-semibold text-blue-600 hover:text-blue-400" type="submit">Import From excel file</button>
+            <button type="submit" class="bg-transparent p-1 rounded-sm font-semibold text-blue-600 hover:text-blue-400" >Import From excel file</button>
+        </div>  
         </form>
-    </div>
       </div>
       </div>
        
