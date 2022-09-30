@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\ExpenseImport;
 use App\Models\Expense;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ExpenseController extends Controller
 {
@@ -32,5 +34,11 @@ class ExpenseController extends Controller
     public function destroy(Expense $expense){
         $expense->delete();
         return redirect('/')->with('status', 'Expense deleted successfully!');
+    }
+
+    public function importExpense(Request $request){
+        // return $request;
+        Excel::import(new ExpenseImport, $request->file);
+        return redirect('/')->with('status', 'Expense imported successfully!');
     }
 }
